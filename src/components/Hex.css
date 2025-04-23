@@ -1,21 +1,48 @@
-.hex-path {
-  stroke: white;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
+.hex {
+  display: flex;
+  flex: 1;
+  margin-bottom: -26px;
+  position: relative;
 }
 
 .hex-svg {
   display: flex;
   flex: 1;
+  overflow: visible;
+  padding: 0 4px;
 }
 
-.hex-svg-spacer {
+.hex-spacer {
   display: flex;
   flex: 1;
 }
 
-.hex-svg-spacer-half {
+.hex-spacer-half {
   display: flex;
   flex: 0.5;
+}
+
+.hex-path {
+  stroke: gray;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.hex-number {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+.hex-number-tile {
+  background-color: white;
+  border-radius: 15px;
+  color: black;
+  height: 30px;
+  text-align: center;
+  width: 30px;
 }

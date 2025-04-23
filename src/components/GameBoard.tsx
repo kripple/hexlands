@@ -3,32 +3,25 @@ import { Hex } from '@/components/Hex';
 import '@/components/GameBoard.css';
 
 export function GameBoard() {
-  const columnsInRow = [
-    ['full', 3, 'full'],
-    ['half', 4, 'half'],
-    [5],
-    ['half', 4, 'half'],
-    ['full', 3, 'full'],
+  const spacer = { id: 'full' } as const;
+  const halfSpacer = { id: 'half' } as const;
+  const rows = [
+    [spacer, { id: 1 }, { id: 2 }, { id: 3 }, spacer],
+    [halfSpacer, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, halfSpacer],
+    [{ id: 9 }, { id: 10 }, { id: 11 }, { id: 12 }, { id: 13 }],
+    [halfSpacer, { id: 14 }, { id: 15 }, { id: 16 }, { id: 17 }, halfSpacer],
+    [spacer, { id: 18 }, { id: 19 }, { id: 20 }, spacer],
   ] as const;
-  type Columns = (typeof columnsInRow)[number];
-
-  const row = (columns: Columns) => (
-    <div className="game-board-row">
-      {columns.map((hex, columnIndex) =>
-        typeof hex === 'string' ? (
-          <Hex key={`column-${columnIndex}`} placeholder={hex} />
-        ) : (
-          Array.from({ length: hex }, (_, rowIndex) => (
-            <Hex key={`row-${rowIndex}`} />
-          ))
-        ),
-      )}
-    </div>
-  );
 
   return (
     <div className="game-board">
-      {columnsInRow.map((columns) => row(columns))}
+      {rows.map((columns, rowIndex) => (
+        <div className="game-board-row" key={rowIndex}>
+          {columns.map(({ id }, columnIndex) => (
+            <Hex hexId={id} key={columnIndex} />
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
