@@ -1,0 +1,9 @@
+.game-board {
+  display: flex;
+  flex-direction: column;
+}
+
+.game-board-row {
+  display: flex;
+  flex-wrap: nowrap;
+}

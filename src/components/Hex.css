@@ -1,0 +1,21 @@
+.hex-path {
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.hex-svg {
+  display: flex;
+  flex: 1;
+}
+
+.hex-svg-spacer {
+  display: flex;
+  flex: 1;
+}
+
+.hex-svg-spacer-half {
+  display: flex;
+  flex: 0.5;
+}

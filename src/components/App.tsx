@@ -1,3 +1,5 @@
+import { GameBoard } from '@/components/GameBoard';
+
 import '@/components/App.css';
 
 export function App() {
@@ -6,7 +8,9 @@ export function App() {
   return (
     <>
       <header className="header">{title}</header>
-      <main className="main"></main>
+      <main className="main">
+        <GameBoard />
+      </main>
     </>
   );
 }
