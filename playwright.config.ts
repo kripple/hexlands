@@ -5,14 +5,15 @@ const url = `http://localhost:${port}` as const;
 
 export default defineConfig({
   fullyParallel: true,
-  reporter: 'list',
+  outputDir: '.test-results',
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  testDir: 'src/app',
+  reporter: 'list',
+  testDir: 'src',
   testMatch: '**/*.test.ts',
   use: {
     baseURL: url,
